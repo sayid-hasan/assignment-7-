@@ -1,69 +1,69 @@
+import { RiAccountCircleLine } from "react-icons/ri";
+import { FaBars } from "react-icons/fa";
+
 const Navbar = () => {
   return (
     <div>
       <div className="navbar w-auto  ">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn pl-0 text-2xl btn-ghost lg:hidden"
+            >
+              <FaBars></FaBars>
             </div>
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
+              <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+                <a>Home</a>
               </li>
-              <li>
-                <a>Parent</a>
+              <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+                <a>Recipes</a>
               </li>
-              <li>
-                <a>Item 3</a>
+              <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+                <a>About</a>
+              </li>
+              <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+                <a>Contact</a>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl dark-01">Recipe Calories</a>
+          <a className="btn btn-ghost text-3xl font-bold text-[#150b2b] px-0 ">
+            Recipe Calories
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
+          <ul className="menu menu-horizontal px-1 ">
+            <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+              <a>Home</a>
             </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-              </details>
+            <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+              <a>Recipes</a>
             </li>
-            <li>
-              <a>Item 3</a>
+            <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+              <a>About</a>
+            </li>
+            <li className="text-base font-normal text-[#150b2b] text-opacity-70">
+              <a>Contact</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <label className="input rounded-full md:mr-6  bg-[#150b2b] bg-opacity-5 flex items-center gap-2">
+          <label className="input  h-[55px]  rounded-full md:mr-6 mr-2 bg-[#150b2b] bg-opacity-5 flex items-center gap-2 ">
             <input
               type="text"
-              className="grow hidden md:block"
+              className="grow border-none outline-none px-6 hidden md:block"
               placeholder="Search"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="w-4 h-4 opacity-70"
+              className="w-6 h-6 opacity-70"
             >
               <path
                 fillRule="evenodd"
@@ -72,7 +72,9 @@ const Navbar = () => {
               />
             </svg>
           </label>
-          <a className="btn">Button</a>
+          <div className="text-2xl w-12 aspect-square rounded-full bg-[#0be58a] flex justify-center items-center ">
+            <RiAccountCircleLine></RiAccountCircleLine>
+          </div>
         </div>
       </div>
     </div>

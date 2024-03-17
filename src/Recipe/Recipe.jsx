@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import { FaRegClock } from "react-icons/fa6";
 import { VscFlame } from "react-icons/vsc";
-const Recipe = ({ recipe }) => {
+import { ToastContainer } from "react-toastify";
+const Recipe = ({ recipe, handleWantToCook }) => {
   const {
     recipe_image,
     recipe_name,
@@ -50,9 +51,13 @@ const Recipe = ({ recipe }) => {
               </div>
             </div>
             <div>
-              <button className="btn bg-[#0be58a] text-black border-transparent hover:text-white rounded-full px-8 py-4">
+              <button
+                onClick={() => handleWantToCook({ recipe })}
+                className="btn bg-[#0be58a] text-black border-transparent hover:text-black rounded-full px-8 py-4"
+              >
                 Want to Cook
               </button>
+              <ToastContainer></ToastContainer>
             </div>
           </div>
         </div>
@@ -63,6 +68,7 @@ const Recipe = ({ recipe }) => {
 
 Recipe.propTypes = {
   recipe: PropTypes.object.isRequired,
+  handleWantToCook: PropTypes.func.isRequired,
 };
 
 export default Recipe;

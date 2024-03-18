@@ -58,6 +58,14 @@ const Sidebar = ({ recipeItems, handlePreparing, curCooking }) => {
                 cookingItem={cookingItem}
               ></CurCooking>
             ))}
+
+            {/* last row */}
+            <tr className="text-base font-normal font-firasans  text-[#282828] text-opacity-60 bg-[#282828} bg-opacity-5">
+              <th className="pl-0 md:pl-4">{}</th>
+              <td className="pl-0">{}</td>
+              <td className="pl-0">{}</td>
+              <td className="pl-0">{}</td>
+            </tr>
           </tbody>
         </table>
       </div>

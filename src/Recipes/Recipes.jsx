@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Recipes = ({ handleWantToCook }) => {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    fetch("./../../public/items.json")
+    fetch("./items.json")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { FaRegClock } from "react-icons/fa6";
 import { VscFlame } from "react-icons/vsc";
-import { ToastContainer } from "react-toastify";
-const Recipe = ({ recipe, handleWantToCook }) => {
+import { ToastContainer, toast } from "react-toastify";
+const Recipe = ({ recipe, handleWantToCook, isToast }) => {
   const {
     recipe_image,
     recipe_name,
@@ -57,6 +57,7 @@ const Recipe = ({ recipe, handleWantToCook }) => {
               >
                 Want to Cook
               </button>
+              {isToast && toast("item already exist")}
               <ToastContainer></ToastContainer>
             </div>
           </div>
@@ -69,6 +70,7 @@ const Recipe = ({ recipe, handleWantToCook }) => {
 Recipe.propTypes = {
   recipe: PropTypes.object.isRequired,
   handleWantToCook: PropTypes.func.isRequired,
+  isToast: PropTypes.bool,
 };
 
 export default Recipe;

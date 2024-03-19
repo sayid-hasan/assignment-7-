@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
 import PropTypes from "prop-types";
 
-const Recipes = ({ handleWantToCook }) => {
+const Recipes = ({ handleWantToCook, isToast }) => {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    fetch("./items.json")
+    fetch("items.json")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
@@ -17,6 +17,7 @@ const Recipes = ({ handleWantToCook }) => {
           idNum={idx}
           recipe={recipe}
           handleWantToCook={handleWantToCook}
+          isToast={isToast}
         ></Recipe>
       ))}
     </div>
@@ -25,6 +26,7 @@ const Recipes = ({ handleWantToCook }) => {
 
 Recipes.propTypes = {
   handleWantToCook: PropTypes.func.isRequired,
+  isToast: PropTypes.bool,
 };
 
 export default Recipes;
